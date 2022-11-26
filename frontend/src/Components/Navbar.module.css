@@ -5,18 +5,18 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.uppernav-div{
+.uppernavdiv{
     display: flex;
     flex-direction: row;
     justify-content:space-between ;
 }
-.logo-div,p{
+.logodiv,p{
     margin: 10px 0px 0px 50px;
 }
 .logo{
     font-size: 24px;
   }
-.profile-div{
+.profilediv{
     display: flex;
     flex: item;
     align-items: center;
@@ -30,8 +30,6 @@
     border-radius: 20px;
     padding: 9px 40px ;
 }
-
-
 
 
 a {
@@ -50,12 +48,12 @@ li {
 }
 
 
-.nav-links {
+.navlinks {
   display: flex;
   justify-content: space-around;
 }
 
-.nav-links li {
+.navlinks li {
   color: black;
   font-size: 16px;
   padding: 10px 20px;
