@@ -1,14 +1,27 @@
-const express = require("express");
+require('dotenv').config();
 
+const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes/routes');
+const Model = require('./models/model');
+
+const mongoString = process.env.DATABASE_URL;
+
+mongoose.connect(mongoString);
+const database = mongoose.connection;
+
+database.on('error', (error) => {
+    console.log(error)
+})
+
+database.once('connected', () => {
+    console.log('Database Connected');
+})
 const app = express();
-const PORT = 3001;
 
-app.listen(PORT, (error) => {
-  if (!error) {
-    console.log(
-      "Server is Successfully Running,and App is listening on port " + PORT
-    );
-  } else {
-    console.log("Error occurred, server can't start", error);
-  }
-});
+app.use(express.json());
+app.use('/api', routes)
+
+app.listen(3001, () => {
+    console.log(`Server Started at ${3001}`)
+})
