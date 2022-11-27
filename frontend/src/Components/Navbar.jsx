@@ -1,21 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
     <>
-      <div className="uppernav-div">
-        <div className="logo-div">
-          <h2 className="logo">
+      <div className={styles.uppernavdiv}>
+        <div className={styles.logodiv}>
+          <h2 className={styles.logo}>
             <span>Access</span>Point
           </h2>
           {/* <p>India Pvt Lmt</p> */}
         </div>
         
-          <div className="profile-div">
-            <Link className="profile" to="/profile">Profile</Link>
-            <Link className="contact" to="/profile">Contact Us</Link>
+          <div className={styles.profilediv}>
+            <Link className={styles.profile} to="/profile">Profile</Link>
+            <Link className={styles.contact} to="/profile">Contact Us</Link>
           </div>
      
       </div>
@@ -23,9 +23,9 @@ const Navbar = () => {
       <br />
       <hr />
 
-      <nav className="navbar">
-        <div className="menu-link">
-          <ul className="nav-links">
+      <nav className={styles.navbar}>
+        <div className={styles.menulink}>
+          <ul className={styles.navlinks}>
             <Link to="/">
               <li>Home</li>
             </Link>
