@@ -12,12 +12,15 @@ const Navbar = () => {
           </h2>
           {/* <p>India Pvt Lmt</p> */}
         </div>
-        
-          <div className={styles.profilediv}>
-            <Link className={styles.profile} to="/profile">Profile</Link>
-            <Link className={styles.contact} to="/profile">Contact Us</Link>
-          </div>
-     
+
+        <div className={styles.profilediv}>
+          <Link className={styles.profile} to="/profile">
+            Profile
+          </Link>
+          <Link className={styles.contact} to="/profile">
+            Contact Us
+          </Link>
+        </div>
       </div>
 
       <br />
@@ -32,7 +35,7 @@ const Navbar = () => {
             <Link to="/about">
               <li>About Us</li>
             </Link>
-            <Link to="/service">
+            <Link to="/testimonial">
               <li>Testimonials</li>
             </Link>
             <Link to="/contact">
