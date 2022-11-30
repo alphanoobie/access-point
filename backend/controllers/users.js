@@ -32,4 +32,23 @@ const signup = async (req, res) => {
   }
 };
 
-module.exports = { signup };
+const login = async (req, res) => {
+  try {
+    //console.log(req.body)
+    const { email, password } = req.body;
+    //check if db has user
+    const user = await User.findOne({ email }).exec();
+    if (!user) return res.status(400).send("No User Found");
+    //check pw
+    const match = await passwordutil.comparePassword(password, user.password);
+    if (!match) {
+      return res.status(400).send("Wrong password");
+    }
+    res.json(user)
+  } catch (err) {
+    console.log(err);
+    return res.status(400).send("Error. Try Again");
+  }
+};
+
+module.exports = { signup, login };

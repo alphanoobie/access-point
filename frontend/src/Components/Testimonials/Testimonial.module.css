@@ -99,6 +99,9 @@
   font-weight: 300;
   margin: 0 0 20px;
 }
+.card_text {
+  position: static;
+}
 
 .down {
   background-color: black;
@@ -116,6 +119,7 @@
 } */
 
 .text_main {
+  position: static;
   color: #e8bda1;
   text-align: left;
   padding-left: 8%;
@@ -123,12 +127,14 @@
   margin: 3% 0;
 }
 .text_top {
+  position: static;
   color: #e8bda1;
   margin: 2% 9%;
   text-align: left;
   font-size: 1.3rem;
 }
 .text_down {
+  position: static;
   color: white;
   margin: 3% 9%;
   text-align: left;
@@ -154,7 +160,9 @@
   color: aliceblue;
 }
 .card_text {
+  position: static;
   margin-top: 0;
+
   font-size: medium;
 }
 

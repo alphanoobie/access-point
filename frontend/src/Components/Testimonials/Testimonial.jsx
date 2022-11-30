@@ -17,7 +17,7 @@ const Testimonial = () => {
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p>
+              <p className={styles.card_text}>
                 If you do the job badly enough, sometimes you don't get asked to
                 do it again.
               </p>
@@ -29,7 +29,7 @@ const Testimonial = () => {
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p>
+              <p className={styles.card_text}>
                 I'm killing time while I wait for life to shower me with meaning
                 and happiness.
               </p>
@@ -41,7 +41,7 @@ const Testimonial = () => {
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p>
+              <p className={styles.card_text}>
                 The only skills I have the patience to learn are those that have
                 no real application in life.{" "}
               </p>

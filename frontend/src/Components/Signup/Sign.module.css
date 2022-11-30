@@ -1,0 +1,45 @@
+.signcontianer {
+  width: 35rem;
+  height: 35rem;
+  background-color: #90e0ef;
+  /* padding-bottom:  */
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.header {
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 34px;
+  text-decoration: underline;
+  text-decoration-color: rgb(249, 249, 249);
+}
+.signform {
+  width: 400px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.inputs {
+  width: 350px;
+  height: 40px;
+  border-radius: 6px;
+  padding: 10px;
+  border: none;
+}
+.labels {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+.submitbutton {
+  margin-top: 20px;
+  width: 30%;
+  border-radius: 15px;
+  padding: 1rem;
+  border: none;
+  background-color: #03768d;
+  color: white;
+}
