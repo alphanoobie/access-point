@@ -1,7 +1,7 @@
 import React from "react";
-import pic1 from "../assets/img/pic1.jpg"
-import pic2 from "../assets/img/homepic.jpg"
-import pic3 from "../assets/img/pic1.jpg"
+import pic1 from "../../assets/img/pic1.jpg"
+import pic2 from "../../assets/img/homepic.jpg"
+import pic3 from "../../assets/img/pic1.jpg"
 
 import styles from "./Service.module.css";
 

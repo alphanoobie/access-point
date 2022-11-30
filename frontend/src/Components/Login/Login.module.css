@@ -1,0 +1,47 @@
+
+.logincontianer{
+  width: 550px;
+  height: 370px;
+  background-color:#90e0ef;
+  padding-bottom:110px ;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.header{
+  margin-bottom:2px ;
+  text-align: center;
+  font-size: 34px;
+  text-decoration: underline;
+  text-decoration-color: rgb(249, 249, 249);
+  
+}
+.loginform{
+  width: 400px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.inputs{
+  width: 350px;
+  height: 40px;
+  border-radius: 6px;
+  padding: 10px;
+  border: none;
+}
+.labels{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+}
+.submitbutton{
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  background-color: #03768d;
+  color: white;
+}

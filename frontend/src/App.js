@@ -1,11 +1,16 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Service from "./Components/Service";
-import Testimonial from "./Components/Testimonial";
+
+
+
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Components/Home/Home";
+import About from "./Components/AboutUs/About";
+import Contact from "./Components/Contact/Contact";
+import Service from "./Components/Service/Service";
+import Testimonial from "./Components/Testimonials/Testimonial";
+import Login from './Components/Login/Login'
+import Signup from './Components/Signup/Sign'
 
 function App() {
   return (
@@ -17,6 +22,8 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );

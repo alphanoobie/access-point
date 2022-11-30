@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Testimonial.module.css";
-import testimonial_pic from "../assets/img/testimonial_pic.jpg";
+import testimonial_pic from "../../assets/img/testimonial_pic.jpg";
 const Testimonial = () => {
   return (
     <div>
       <div className={styles.top}>
-        <div className={styles.wrapper}></div>
+        <div className={styles.wrappertesti}></div>
         <img
           className={styles.testimonialPhoto}
           src={testimonial_pic}
