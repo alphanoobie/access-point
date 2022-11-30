@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Testimonial.module.css";
-import testimonial_pic from "../../assets/img/testimonial_pic.jpg";
+import testimonial_pic from "../../assets/img/testimonial_main.jpg";
 const Testimonial = () => {
   return (
     <div>
@@ -17,37 +17,37 @@ const Testimonial = () => {
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p className={styles.card_text}>
+              <p className={styles.topcard_text}>
                 If you do the job badly enough, sometimes you don't get asked to
                 do it again.
               </p>
             </blockquote>
             <h3>Wisteria Ravenclaw</h3>
-            <h4>Google Inc.</h4>
+            <h4 className={styles.card_company}>Google Inc.</h4>
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p className={styles.card_text}>
+              <p className={styles.topcard_text}>
                 I'm killing time while I wait for life to shower me with meaning
                 and happiness.
               </p>
             </blockquote>
             <h3>Ursula Gurnmeister</h3>
-            <h4>Facebook</h4>
+            <h4 className={styles.card_company}>Facebook</h4>
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
-              <p className={styles.card_text}>
+              <p className={styles.topcard_text}>
                 The only skills I have the patience to learn are those that have
-                no real application in life.{" "}
+                no real application in life.
               </p>
             </blockquote>
             <h3>Ingredia Nutrisha</h3>
-            <h4>Twitter</h4>
+            <h4 className={styles.card_company}>Twitter</h4>
           </figcaption>
         </figure>
       </div>
