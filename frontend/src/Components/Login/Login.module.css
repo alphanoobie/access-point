@@ -1,7 +1,7 @@
 .logincontianer {
   width: 550px;
   height: 370px;
-  background-color: #90e0ef;
+  background-color: #6dd5ed;
   padding-bottom: 110px;
   margin: 2rem auto;
   border-radius: 10px;
@@ -40,6 +40,6 @@
   height: 40px;
   border-radius: 15px;
   border: none;
-  background-color: #03768d;
+  background-color: #2193b0;
   color: white;
 }

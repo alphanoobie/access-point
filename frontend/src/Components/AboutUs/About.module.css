@@ -23,10 +23,11 @@ body {
 .heading {
   background-color: aliceblue;
   padding: 2%;
-  top: 40vh;
+  top: 20vh;
   left: 40vw;
   position: absolute;
   font-size: xxx-large;
+  border-radius: 15px;
 }
 .middle {
   padding: 3%;
@@ -64,14 +65,13 @@ body {
   perspective: 1000px;
 
   position: relative;
-  background-color: #111;
   font-family: "Montserrat";
 }
 
 .container {
   min-width: 700px;
   min-height: 350px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   position: relative;
   -webkit-transition: 1.5s ease-in-out;
   transition: 1.5s ease-in-out;
@@ -92,6 +92,7 @@ body {
 .content {
   transform: translatez(70px) scale(0.8);
   line-height: 1.5em;
+  padding-top: 50px;
 }
 .content h1 {
   position: relative;
