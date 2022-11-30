@@ -11,8 +11,8 @@ const Home = () => {
       </h1>
       <h4 className={styles.subheading}>WE CAN HELP YOU !</h4>
       <p className={styles.subpara}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-        minus ratione voluptatibus.
+        Our services will increase your company’s ability to focus on the areas
+        that expand your business and maximize your profits.
       </p>
       <img className={styles.image1} src={image1} alt="" />
     </div>

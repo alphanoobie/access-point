@@ -33,21 +33,21 @@ p {
   margin: 10px 50px 0 0;
 }
 
-/* .profilediv,
+/* .profilediv,*/
 .contactdiv {
   display: none;
   display: flex;
   flex-direction: row;
-  border: 1px solid blue;
+  border: 1px solid #6dd5ed;
   border-radius: 20px;
   padding: 9px 30px;
-} */
+} 
 
 .logindiv,
 .signupdiv {
   display: flex;
   flex-direction: row;
-  border: 1px solid blue;
+  border: 1px solid #6dd5ed;
   border-radius: 20px;
   padding: 9px 30px;
 }

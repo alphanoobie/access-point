@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PhoneIcon from "@mui/icons-material/Phone";
-import logoimage from "../../assets/img/logo.png"
+import logoimage from "../../assets/img/logo.png";
+import SignLanguageIcon from '@mui/icons-material/SignLanguage';
 
 const Navbar = () => {
   return (
     <>
       <div className={styles.uppernavdiv}>
         <div className={styles.logodiv}>
-          <img src={logoimage} className={styles.logo} alt=""/>
+          <img src={logoimage} className={styles.logo} alt="" />
         </div>
 
         <div className={styles.leftside}>
@@ -20,13 +21,8 @@ const Navbar = () => {
               Profile
             </Link>
           </div>
-          <div className={styles.contactdiv}>
-            <PhoneIcon className={styles.phoneicon} />
-            <Link className={styles.contact} to="/profile">
-              Contact Us
-            </Link>
-          </div> */}
-
+          */}
+          
 
           <div className={styles.logindiv}>
             <AccountCircleIcon className={styles.loginicon} />
@@ -35,11 +31,17 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={styles.signupdiv}>
-            <PhoneIcon className={styles.signupicon} />
+            <SignLanguageIcon className={styles.signupicon} />
             <Link className={styles.signup} to="/signup">
               Sign Up
             </Link>
           </div>
+          <div className={styles.contactdiv}>
+            <PhoneIcon className={styles.phoneicon} />
+            <Link className={styles.contact} to="/profile">
+              Contact Us
+            </Link>
+          </div> 
         </div>
       </div>
 
@@ -57,12 +59,6 @@ const Navbar = () => {
             </Link>
             <Link to="/testimonial">
               <li>Testimonials</li>
-            </Link>
-            <Link to="/contact">
-              <li>Blogs</li>
-            </Link>
-            <Link to="/contact">
-              <li>Careers</li>
             </Link>
             <Link to="/service">
               <li>Services</li>
