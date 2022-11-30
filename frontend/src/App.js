@@ -12,9 +12,13 @@ import Testimonial from "./Components/Testimonials/Testimonial";
 import Login from './Components/Login/Login'
 import Signup from './Components/Signup/Sign'
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div>
+    <ToastContainer position="top-center" />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
