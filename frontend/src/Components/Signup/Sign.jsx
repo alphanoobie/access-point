@@ -8,22 +8,6 @@ const Sign = () => {
         <h2>Sign Up</h2>
       </div>
       <form className={styles.signform}>
-        <label className={styles.labels}>First Name</label>
-        <input
-          className={styles.inputs}
-          type="text"
-          id="f_name"
-          name="f_name"
-          placeholder="First Name"
-        />
-        <label className={styles.labels}>Last Name</label>
-        <input
-          className={styles.inputs}
-          type="text"
-          id="l_name"
-          name="l_name"
-          placeholder="Last Name"
-        />
         <label className={styles.labels}>Email</label>
         <input
           className={styles.inputs}
@@ -34,6 +18,15 @@ const Sign = () => {
         />
 
         <label className={styles.labels}>Create Password</label>
+        <input
+          className={styles.inputs}
+          type="password"
+          id="password"
+          name="password"
+          placeholder="password"
+        />
+
+        <label className={styles.labels}>Confirm Password</label>
         <input
           className={styles.inputs}
           type="password"
