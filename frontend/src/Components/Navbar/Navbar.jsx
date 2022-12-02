@@ -38,7 +38,7 @@ const Navbar = () => {
           </div>
           <div className={styles.contactdiv}>
             <PhoneIcon className={styles.phoneicon} />
-            <Link className={styles.contact} to="/profile">
+            <Link className={styles.contact} to="/contact">
               Contact Us
             </Link>
           </div> 

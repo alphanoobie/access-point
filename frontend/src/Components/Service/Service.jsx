@@ -17,7 +17,7 @@ const Service = () => {
           </div>
 
           <div class={styles.content}>
-            <p>
+            <p className={styles.contentpara}>
               Our maintenance and repair contracts are completed with the
               dedication to convey results.We have broad experience of working
               with all sizes, scales and sorts of corporates.
@@ -31,7 +31,7 @@ const Service = () => {
           </div>
 
           <div class={styles.content}>
-            <p>
+            <p className={styles.contentpara}>
               There’s never a decent time for a plumbing emergency! Isn’t it
               nice to know that Access Point is available for you every time,
               right there when you need us.From faucets, installations and pipes
@@ -47,7 +47,7 @@ const Service = () => {
           </div>
 
           <div class={styles.content}>
-            <p>
+            <p className={styles.contentpara}>
               When your Painting, Coatings, Waterproofing or Repair Needs are
               high on top of the list, our trained experts have the Experience
               and Expertise, to present to you the outcomes you require. The
@@ -63,7 +63,7 @@ const Service = () => {
           </div>
 
           <div class={styles.content}>
-            <p>
+            <p className={styles.contentpara}>
               Power is vital. Indeed, in this age it's difficult to do quite a
               bit of anything around the office without power. You need to make
               sure your next electrical fitting or electrical repair is done

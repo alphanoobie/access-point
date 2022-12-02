@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import About from "./Components/AboutUs/About";
-import Contact from "./Components/Contact/Contact";
+import Contact from "./Components/Contact/Contact"
 import Service from "./Components/Service/Service";
 import Testimonial from "./Components/Testimonials/Testimonial";
 import Login from './Components/Login/Login'
