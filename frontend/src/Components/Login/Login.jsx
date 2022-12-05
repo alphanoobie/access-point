@@ -18,6 +18,7 @@ const Login = () => {
         console.log(data);
         toast("Login Successful");
         window.localStorage.setItem("user", JSON.stringify(data))
+        window.localStorage.setItem("isLoggedIn",true)   //see if user is logged in or no 
         navigate('/')
     } catch (err) {
       console.log(err);

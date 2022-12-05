@@ -16,6 +16,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const loggedIn = window.localStorage.getItem("isLoggedIn"); //sneha code to see if the user is logged in or no
+  console.log(loggedIn,"true"); //printing
   return (
     <div>
     <ToastContainer position="top-center" />
