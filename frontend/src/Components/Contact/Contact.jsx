@@ -17,7 +17,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try{
-      const {data} = await axios.post('http://localhost:3001/api/contact/', {fname, lname, email, phone, message});
+      const {data} = await axios.post('http://localhost:3001/api/contact-us/', {fname, lname, email, phone, message});
       toast("Thank you! Our team will get back to you soon.")
       console.log(data);
       window.localStorage.setItem("user",JSON.stringify(data))
