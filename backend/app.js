@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const user = require('./routes/users');
+const contactUs = require("./routes/contactUs")
 const cors= require("cors")
 
 const mongoString = process.env.DATABASE_URL;
@@ -23,6 +24,7 @@ app.use(cors({origin:true, credentials:true}))
 
 app.use(express.json());
 app.use('/api', user)
+app.use('/api', contactUs)
 
 app.listen(3001, () => {
     console.log(`Server Started at ${3001}`)
