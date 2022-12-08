@@ -37,7 +37,7 @@ const Navbar = (props) => {
             <div className={styles.signupdiv}>
               <SignLanguageIcon className={styles.signupicon} />
               <Link className={styles.signup} to="/signup">
-                {props.logined ? "heelo" : "Sign Up"}
+                Sign up
               </Link>
             </div>
           )}

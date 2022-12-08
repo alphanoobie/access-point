@@ -22,6 +22,7 @@ const Login = () => {
         navigate('/')
         window.location.reload(true);
 
+
     } catch (err) {
       console.log(err);
       toast(err.response.data)
