@@ -4,9 +4,11 @@ import styles from "./Navbar.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PhoneIcon from "@mui/icons-material/Phone";
 import logoimage from "../../assets/img/logo.png";
-import SignLanguageIcon from '@mui/icons-material/SignLanguage';
+import SignLanguageIcon from "@mui/icons-material/SignLanguage";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+
   return (
     <>
       <div className={styles.uppernavdiv}>
@@ -15,25 +17,24 @@ const Navbar = () => {
         </div>
 
         <div className={styles.leftside}>
-          {/* <div className={styles.profilediv}>
+          {/* <div className={styles.profilediv} >
             <AccountCircleIcon className={styles.profileicon} />
             <Link className={styles.profile} to="/profile">
               Profile
             </Link>
-          </div>
-          */}
-          
+          </div> */}
+         
 
           <div className={styles.logindiv}>
             <AccountCircleIcon className={styles.loginicon} />
             <Link className={styles.login} to="/login">
-              Login
+              {props.logined ? "Profile" : "Login"}
             </Link>
           </div>
-          <div className={styles.signupdiv}>
+          <div className={styles.signupdiv} >
             <SignLanguageIcon className={styles.signupicon} />
             <Link className={styles.signup} to="/signup">
-              Sign Up
+              {props.logined ? "heelo" : "Sign Up"}
             </Link>
           </div>
           <div className={styles.contactdiv}>
@@ -41,7 +42,7 @@ const Navbar = () => {
             <Link className={styles.contact} to="/contact">
               Contact Us
             </Link>
-          </div> 
+          </div>
         </div>
       </div>
 

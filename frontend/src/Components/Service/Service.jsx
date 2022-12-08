@@ -3,20 +3,28 @@ import pic1 from "../../assets/img/pic1.jpg";
 import pic2 from "../../assets/img/homepic.jpg";
 import pic3 from "../../assets/img/painting.jpg";
 import pic4 from "../../assets/img/electrical.jpg";
+import ServicePopForm from "./SevicePopForm"
 
 import styles from "./Service.module.css";
+import { useState } from "react";
+
+ 
 
 const Service = () => {
+
+  const [popUp, setPopup] = useState("");
   return (
     <>
+      <ServicePopForm trigger={popUp} setTrigger={setPopup}/>
+
       <div className={styles.selfcontainer}>
-        <div class={styles.card}>
-          <div class={styles.imgbox}>
+        <div className={styles.card}>
+          <div className={styles.imgbox}>
             <img src={pic1} alt="" />
             <h2>MAINTENANCE</h2>
           </div>
 
-          <div class={styles.content}>
+          <div className={styles.content}>
             <p className={styles.contentpara}>
               Our maintenance and repair contracts are completed with the
               dedication to convey results.We have broad experience of working
@@ -24,13 +32,13 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div class={styles.card}>
-          <div class={styles.imgbox}>
+        <div className={styles.card}>
+          <div className={styles.imgbox}>
             <img src={pic2} alt="" />
             <h2 className={styles.title}>PLUMBING</h2>
           </div>
 
-          <div class={styles.content}>
+          <div className={styles.content}>
             <p className={styles.contentpara}>
               There’s never a decent time for a plumbing emergency! Isn’t it
               nice to know that Access Point is available for you every time,
@@ -40,13 +48,13 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div class={styles.card}>
-          <div class={styles.imgbox}>
+        <div className={styles.card}>
+          <div className={styles.imgbox}>
             <img src={pic3} alt="" />
             <h2 className={styles.title}>PAINTING</h2>
           </div>
 
-          <div class={styles.content}>
+          <div className={styles.content}>
             <p className={styles.contentpara}>
               When your Painting, Coatings, Waterproofing or Repair Needs are
               high on top of the list, our trained experts have the Experience
@@ -56,13 +64,13 @@ const Service = () => {
             </p>
           </div>
         </div>
-        <div class={styles.card}>
-          <div class={styles.imgbox}>
+        <div className={styles.card}>
+          <div className={styles.imgbox}>
             <img src={pic4} alt="" />
             <h2 className={styles.title}>ELECTRICAL</h2>
           </div>
 
-          <div class={styles.content}>
+          <div className={styles.content}>
             <p className={styles.contentpara}>
               Power is vital. Indeed, in this age it's difficult to do quite a
               bit of anything around the office without power. You need to make
@@ -72,6 +80,10 @@ const Service = () => {
           </div>
         </div>
       </div>
+      <div>
+      <button className={styles.requestBtn} onClick={()=>setPopup(true)}>Request Service</button>
+      </div>
+
     </>
   );
 };
