@@ -20,11 +20,14 @@ const Login = () => {
         window.localStorage.setItem("user", JSON.stringify(data))
         window.localStorage.setItem("isLoggedIn",true)   //see if user is logged in or no 
         navigate('/')
+        window.location.reload(true);
+
     } catch (err) {
       console.log(err);
       toast(err.response.data)
     }
   };
+  
   return (
     <div className={styles.logincontianer}>
       <div className={styles.header}>

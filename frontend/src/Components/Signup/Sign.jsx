@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import styles from "./Sign.module.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
+
 
 const Sign = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -15,6 +21,7 @@ const Sign = () => {
         const { data } = await axios.post(`http://localhost:3001/api/signup/`, { email, password });
         console.log(data);
         toast("Signup successful please login");
+        navigate("/login")
       } else {
         toast("Passwords do not match");
       }

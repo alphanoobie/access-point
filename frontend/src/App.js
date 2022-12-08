@@ -17,11 +17,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const loggedIn = window.localStorage.getItem("isLoggedIn"); //sneha code to see if the user is logged in or no
-  console.log(loggedIn,"true"); //printing
+  console.log(loggedIn,"truebb"); //printing
   return (
     <div>
     <ToastContainer position="top-center" />
-      <Navbar />
+      <Navbar logined={loggedIn}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
