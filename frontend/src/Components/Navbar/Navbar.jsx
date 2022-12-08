@@ -7,7 +7,7 @@ import logoimage from "../../assets/img/logo.png";
 import SignLanguageIcon from "@mui/icons-material/SignLanguage";
 
 const Navbar = (props) => {
-
+  // const [islogged, setIslogged] = useState(false);
 
   return (
     <>
@@ -17,26 +17,30 @@ const Navbar = (props) => {
         </div>
 
         <div className={styles.leftside}>
-          {/* <div className={styles.profilediv} >
-            <AccountCircleIcon className={styles.profileicon} />
-            <Link className={styles.profile} to="/profile">
-              Profile
-            </Link>
-          </div> */}
-         
+          {props.logined ? (
+            <div className={styles.profilediv}>
+              <AccountCircleIcon className={styles.profileicon} />
+              <Link className={styles.profile} to="/profile">
+                Profile
+              </Link>
+            </div>
+          ) : (
+            <div className={styles.logindiv}>
+              <AccountCircleIcon className={styles.loginicon} />
+              <Link className={styles.login} to="/login">
+                {props.logined ? "Profile" : "Login"}
+              </Link>
+            </div>
+          )}
 
-          <div className={styles.logindiv}>
-            <AccountCircleIcon className={styles.loginicon} />
-            <Link className={styles.login} to="/login">
-              {props.logined ? "Profile" : "Login"}
-            </Link>
-          </div>
-          <div className={styles.signupdiv} >
-            <SignLanguageIcon className={styles.signupicon} />
-            <Link className={styles.signup} to="/signup">
-              {props.logined ? "heelo" : "Sign Up"}
-            </Link>
-          </div>
+          {!props.logined && (
+            <div className={styles.signupdiv}>
+              <SignLanguageIcon className={styles.signupicon} />
+              <Link className={styles.signup} to="/signup">
+                {props.logined ? "heelo" : "Sign Up"}
+              </Link>
+            </div>
+          )}
           <div className={styles.contactdiv}>
             <PhoneIcon className={styles.phoneicon} />
             <Link className={styles.contact} to="/contact">
