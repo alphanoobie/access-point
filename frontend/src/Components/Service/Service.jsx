@@ -3,19 +3,16 @@ import pic1 from "../../assets/img/pic1.jpg";
 import pic2 from "../../assets/img/homepic.jpg";
 import pic3 from "../../assets/img/painting.jpg";
 import pic4 from "../../assets/img/electrical.jpg";
-import ServicePopForm from "./SevicePopForm"
+import ServicePopForm from "./SevicePopForm";
 
 import styles from "./Service.module.css";
 import { useState } from "react";
 
- 
-
 const Service = () => {
-
   const [popUp, setPopup] = useState("");
   return (
     <>
-      <ServicePopForm trigger={popUp} setTrigger={setPopup}/>
+      <ServicePopForm trigger={popUp} setTrigger={setPopup} />
 
       <div className={styles.selfcontainer}>
         <div className={styles.card}>
@@ -81,9 +78,10 @@ const Service = () => {
         </div>
       </div>
       <div>
-      <button className={styles.requestBtn} onClick={()=>setPopup(true)}>Request Service</button>
+        <button className={styles.requestBtn} onClick={() => setPopup(true)}>
+          Request Service
+        </button>
       </div>
-
     </>
   );
 };

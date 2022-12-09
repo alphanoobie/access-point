@@ -14,7 +14,7 @@ import Backdrop from "@mui/material/Backdrop";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ServicePopForm = (props) => {
+const Popup = (props) => {
   const [fName, setfName] = useState("");
   const [lName, setlName] = useState("");
   const [phone, setphone] = useState("");
@@ -42,24 +42,23 @@ const ServicePopForm = (props) => {
   };
 
   return props.trigger ? (
-    <div style={{ padding: "1%" }} className={styles.popup}>
+    <div className={styles.popup}>
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={props.trigger}
       >
-        <div>
+        <div className={styles.popInner}>
           <Typography
             backgroundColor="#f7f8f8"
             color="textSecondary"
             variant="h3"
             align="center"
-            style={{ padding: "1%" }}
           >
             We are here for you!
           </Typography>
           <Grid>
             <Card
-              style={{ maxWidth: 450, padding: "10px 10px", margin: "0 auto" }}
+              style={{ maxWidth: 450, padding: "5px 5px", margin: "0 auto" }}
             >
               <div
                 style={{
@@ -177,4 +176,4 @@ const ServicePopForm = (props) => {
   );
 };
 
-export default ServicePopForm;
+export default Popup;
