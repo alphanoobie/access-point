@@ -7,10 +7,15 @@ import ServicePopForm from "./SevicePopForm";
 
 import styles from "./Service.module.css";
 import { useState } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Service = (props) => {
   const [popUp, setPopup] = useState("");
+  const navigate = useNavigate()
+
+
+
   return (
     <div>
       <ServicePopForm trigger={popUp} setTrigger={setPopup} />
@@ -79,7 +84,7 @@ const Service = (props) => {
         </div>
       </div>
       <div>
-        <button className={styles.requestBtn} onClick={() =>  props.logined ? setPopup(true) : redirect("/login")} > 
+        <button className={styles.requestBtn} onClick={() =>  props.logined ? setPopup(true) : navigate('/login')} > 
           Request Service
         </button>
       </div>

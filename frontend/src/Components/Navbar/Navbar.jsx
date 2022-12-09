@@ -5,9 +5,11 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PhoneIcon from "@mui/icons-material/Phone";
 import logoimage from "../../assets/img/logo.png";
 import SignLanguageIcon from "@mui/icons-material/SignLanguage";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbar = (props) => {
-  // const [islogged, setIslogged] = useState(false);
+ 
+  
 
   return (
     <>
@@ -47,7 +49,15 @@ const Navbar = (props) => {
               Contact Us
             </Link>
           </div>
+          {props.logined && (
+          <div className={styles.contactdiv}>
+            <LogoutIcon className={styles.phoneicon} />
+            <Link className={styles.contact} to="/">
+              Logout
+            </Link>
+          </div>)}
         </div>
+        
       </div>
 
       <br />
