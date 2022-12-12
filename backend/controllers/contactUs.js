@@ -8,15 +8,24 @@ const contactUs = async (req, res) => {
       lname,
       email,
       phone,
-      message
+      message,
     });
-    await contact.save()
-    console.log("contact form submitted")
+    await contact.save();
+    console.log("contact form submitted");
     return res.json({ ok: true });
   } catch (err) {
     console.log(err);
-    return res.status(400).send("Error. Try Again")
+    return res.status(400).send("Error. Try Again");
   }
 };
 
-module.exports = { contactUs };
+const allContacts = async (req, res) => {
+  try {
+    const allContacts = await ContactUs.find({})
+    res.json(allContacts)
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = { contactUs, allContacts };

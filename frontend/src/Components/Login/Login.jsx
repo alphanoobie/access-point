@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Login.module.css";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,26 +9,27 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-        const { data } = await axios.post(`http://localhost:3001/api/login/`, { email, password });
-        console.log(data);
-        toast("Login Successful");
-        window.localStorage.setItem("user", JSON.stringify(data))
-        window.localStorage.setItem("isLoggedIn",true)   //see if user is logged in or no 
-        navigate('/')
-        window.location.reload(true);
-
-
+      const { data } = await axios.post(`http://localhost:3001/api/login/`, {
+        email,
+        password,
+      });
+      console.log(data);
+      toast("Login Successful");
+      window.localStorage.setItem("user", JSON.stringify(data));
+      window.localStorage.setItem("isLoggedIn", true); //see if user is logged in or no
+      navigate("/");
+      window.location.reload(true);
     } catch (err) {
       console.log(err);
-      toast(err.response.data)
+      toast(err.response.data);
     }
   };
-  
+
   return (
     <div className={styles.logincontianer}>
       <div className={styles.header}>

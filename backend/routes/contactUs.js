@@ -8,3 +8,4 @@ module.exports = router;
 
 //Post Method
 router.post("/contact-us", controller.contactUs);
+router.get('/all-contacts', controller.allContacts)
