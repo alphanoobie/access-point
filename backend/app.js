@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const user = require('./routes/users');
 const contactUs = require("./routes/contactUs")
+const serviceRequest = require("./routes/serviceRequest")
 const cors= require("cors")
 
 const mongoString = process.env.DATABASE_URL;
@@ -25,6 +26,7 @@ app.use(cors({origin:true, credentials:true}))
 app.use(express.json());
 app.use('/api', user)
 app.use('/api', contactUs)
+app.use('/api', serviceRequest)
 
 app.listen(3001, () => {
     console.log(`Server Started at ${3001}`)
