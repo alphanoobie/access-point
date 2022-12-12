@@ -25,6 +25,7 @@ const allContacts = async (req, res) => {
     res.json(allContacts)
   } catch (error) {
     console.log(error);
+    res.status(400).send('Error, Try Again')
   }
 };
 
