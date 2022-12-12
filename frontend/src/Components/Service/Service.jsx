@@ -9,13 +9,9 @@ import styles from "./Service.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 const Service = (props) => {
   const [popUp, setPopup] = useState("");
-  const navigate = useNavigate()
-
-
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -85,7 +81,10 @@ const Service = (props) => {
         </div>
       </div>
       <div>
-        <button className={styles.requestBtn} onClick={() =>  props.logined ? setPopup(true) : navigate('/login')} > 
+        <button
+          className={styles.requestBtn}
+          onClick={() => (props.logined ? setPopup(true) : navigate("/login"))}
+        >
           Request Service
         </button>
       </div>

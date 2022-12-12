@@ -64,8 +64,8 @@ const ServicePopForm = (props) => {
             <Card
               style={{
                 maxWidth: "700px",
-                padding: "10px 10px",
-                margin: "0 auto",
+                padding: "5px 10px",
+                margin: "-2px auto",
               }}
             >
               <div
@@ -88,6 +88,7 @@ const ServicePopForm = (props) => {
                 color="textSecondary"
                 component="p"
                 gutterBottom
+                ml={5}
               >
                 Fill up the form and our team will get back to you within 24
                 hours.
@@ -95,15 +96,15 @@ const ServicePopForm = (props) => {
               <CardContent>
                 <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
                   <Card
-                    onClick={() => handleCardClick("repair")}
-                    sx={{ maxWidth: 800, margin: "2%", padding: "1%" }}
+                    onClick={() => handleCardClick("maintenance")}
+                    sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "repair"}
+                          checked={service === "maintenance"}
                           onChange={handleChange}
-                          value="repair"
+                          value="maintenance"
                           name="radio-buttons"
                           style={{ verticalAlign: "sub" }}
                         />
@@ -113,7 +114,7 @@ const ServicePopForm = (props) => {
                           variant="h5"
                           component="div"
                         >
-                          Repair & Maintainance
+                          Maintainance
                         </Typography>
                         <Typography
                           ml={5}
@@ -129,15 +130,15 @@ const ServicePopForm = (props) => {
                   </Card>
 
                   <Card
-                    onClick={() => handleCardClick("turnkey")}
-                    sx={{ maxWidth: 800, margin: "2%", padding: "1%" }}
+                    onClick={() => handleCardClick("plumbing")}
+                    sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "turnkey"}
+                          checked={service === "plumbing"}
                           onChange={handleChange}
-                          value="turnkey"
+                          value="plumbing"
                           name="radio-buttons"
                           size="small"
                           style={{ verticalAlign: "sub" }}
@@ -149,7 +150,7 @@ const ServicePopForm = (props) => {
                           component="div"
                           mt="10"
                         >
-                          TURNKEY PROJECTS
+                          Plumbing
                         </Typography>
                         <Typography
                           ml={5}
@@ -165,15 +166,15 @@ const ServicePopForm = (props) => {
                   </Card>
 
                   <Card
-                    onClick={() => handleCardClick("staffing")}
-                    sx={{ maxWidth: 800, margin: "2%", padding: "1%" }}
+                    onClick={() => handleCardClick("painting")}
+                    sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "staffing"}
+                          checked={service === "painting"}
                           onChange={handleChange}
-                          value="staffing"
+                          value="painting"
                           name="radio-buttons"
                           style={{ verticalAlign: "sub" }}
                         />
@@ -183,7 +184,41 @@ const ServicePopForm = (props) => {
                           variant="h5"
                           component="div"
                         >
-                          STAFFING SOLUTIONS
+                          Painting
+                        </Typography>
+                        <Typography
+                          ml={5}
+                          variant="body2"
+                          color="text.secondary"
+                        >
+                          Starting from 599/- onwards. Additional cost depends
+                          on parts and equipment.
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions></CardActions>
+                  </Card>
+
+                  <Card
+                    onClick={() => handleCardClick("electrical")}
+                    sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
+                  >
+                    <CardActionArea>
+                      <CardContent>
+                        <Radio
+                          checked={service === "electrical"}
+                          onChange={handleChange}
+                          value="electrical"
+                          name="radio-buttons"
+                          style={{ verticalAlign: "sub" }}
+                        />
+                        <Typography
+                          display="inline"
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          Electrical
                         </Typography>
                         <Typography
                           ml={5}
