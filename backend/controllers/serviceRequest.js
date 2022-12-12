@@ -16,4 +16,13 @@ const serviceRequest = async(req,res) => {
     }
 }
 
-module.exports = { serviceRequest };
+const userServiceRequests = async(req, res)=> {
+    try {
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send('Service Request Submitted')
+    }
+}
+
+module.exports = { serviceRequest, userServiceRequests };
