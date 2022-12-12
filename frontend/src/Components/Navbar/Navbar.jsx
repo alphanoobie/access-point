@@ -5,11 +5,20 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PhoneIcon from "@mui/icons-material/Phone";
 import logoimage from "../../assets/img/logo.png";
 import SignLanguageIcon from "@mui/icons-material/SignLanguage";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
- 
-  
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    toast("Logged Out");
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 3000);
+  };
 
   return (
     <>
@@ -50,14 +59,14 @@ const Navbar = (props) => {
             </Link>
           </div>
           {props.logined && (
-          <div className={styles.contactdiv}>
-            <LogoutIcon className={styles.phoneicon} />
-            <Link className={styles.contact} to="/">
-              Logout
-            </Link>
-          </div>)}
+            <div className={styles.contactdiv}>
+              <LogoutIcon className={styles.phoneicon} />
+              <Link className={styles.contact} to="/" onClick={logout}>
+                Logout
+              </Link>
+            </div>
+          )}
         </div>
-        
       </div>
 
       <br />

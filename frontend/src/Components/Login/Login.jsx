@@ -23,7 +23,9 @@ const Login = () => {
       window.localStorage.setItem("user", JSON.stringify(data));
       window.localStorage.setItem("isLoggedIn", true); //see if user is logged in or no
       navigate("/");
-      window.location.reload(true);
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 3000);
     } catch (err) {
       console.log(err);
       toast(err.response.data);
