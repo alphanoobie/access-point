@@ -7,11 +7,18 @@ import ServicePopForm from "./SevicePopForm";
 
 import styles from "./Service.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Service = () => {
+
+
+const Service = (props) => {
   const [popUp, setPopup] = useState("");
+  const navigate = useNavigate()
+
+
+
   return (
-    <>
+    <div>
       <ServicePopForm trigger={popUp} setTrigger={setPopup} />
 
       <div className={styles.selfcontainer}>
@@ -78,11 +85,11 @@ const Service = () => {
         </div>
       </div>
       <div>
-        <button className={styles.requestBtn} onClick={() => setPopup(true)}>
+        <button className={styles.requestBtn} onClick={() =>  props.logined ? setPopup(true) : navigate('/login')} > 
           Request Service
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
