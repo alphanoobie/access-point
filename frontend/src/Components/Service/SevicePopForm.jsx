@@ -112,7 +112,7 @@ const ServicePopForm = (props) => {
                           variant="h5"
                           component="div"
                         >
-                          Repair & Maintainance
+                          REPAIR & MAINTAINENCE
                         </Typography>
                         <Typography
                           ml={5}
