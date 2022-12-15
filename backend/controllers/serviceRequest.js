@@ -18,7 +18,7 @@ const serviceRequest = async (req, res) => {
 
 const userServiceRequests = async (req, res) => {
   try {
-    const allServiceRequests = await serviceRequestModel.find({ user: req.body.user }).exec();
+    const allServiceRequests = await serviceRequestModel.find({ user: req.body.user }).populate('user').exec();
     console.log(allServiceRequests)
     return res.status(200).send(allServiceRequests)
   } catch (error) {
