@@ -25,6 +25,10 @@ export default function Admin() {
     setLoading(false);
   };
 
+  const handleCompletedClick = (e) => {
+    console.log(e.target.getAttribute('index'));
+  };
+
   useEffect(() => {
     try {
       getServiceRequestsData();
@@ -49,8 +53,8 @@ export default function Admin() {
           </TableHead>
           <TableBody>
             {serviceRequests &&
-              serviceRequests.map((serviceRequest) => (
-                <TableRow component="th" scope="row">
+              serviceRequests.map((serviceRequest, index) => (
+                <TableRow key={index} component="th" scope="row">
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
@@ -62,7 +66,9 @@ export default function Admin() {
                   <TableCell>
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
-                  <TableCell>Mark Completed</TableCell>
+                  <TableCell index={index} onClick={handleCompletedClick}>
+                    Mark Completed
+                  </TableCell>
                   <TableCell>Mark Paid</TableCell>
                 </TableRow>
               ))}
