@@ -7,6 +7,7 @@ const ServiceRequestSchema = new mongoose.Schema(
     user: {
       type: ObjectId,
       ref: "AccessUsers",
+     required: true
     },
 
     request: {
@@ -15,6 +16,11 @@ const ServiceRequestSchema = new mongoose.Schema(
     },
 
     completeStatus: {
+      type: Boolean,
+      default: false,
+    },
+    
+    paymentStatus: {
       type: Boolean,
       default: false,
     },

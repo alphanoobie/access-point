@@ -29,7 +29,7 @@ const userServiceRequests = async (req, res) => {
 
 const allServiceRequests = async (req, res) => {
     try {
-      const allServiceRequests = await serviceRequestModel.find().exec();
+      const allServiceRequests = await serviceRequestModel.find().populate('user').exec();
       console.log(allServiceRequests)
       return res.status(200).send(allServiceRequests)
     } catch (error) {
