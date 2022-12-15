@@ -7,16 +7,19 @@ import About from "./Components/AboutUs/About";
 import Contact from "./Components/Contact/Contact";
 import Service from "./Components/Service/Service";
 import Testimonial from "./Components/Testimonials/Testimonial";
-import Login from "./Components/Login/Login";
-import Signup from "./Components/Signup/Sign";
+import Login from './Components/Login/Login'
+import Signup from './Components/Signup/Sign'
+import Profile from './Components/Profile/Profile'
+
 import Admin from "./Components/Admin/Admin";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 function App() {
   const loggedIn = window.localStorage.getItem("isLoggedIn"); //sneha code to see if the user is logged in or no
-  console.log(loggedIn, "truebb"); //printing
+
   return (
     <div>
       <ToastContainer position="top-center" />
@@ -29,6 +32,7 @@ function App() {
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
