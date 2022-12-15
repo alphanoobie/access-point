@@ -25,8 +25,16 @@ export default function Admin() {
     setLoading(false);
   };
 
-  const handleCompletedClick = (e) => {
-    console.log(e.target.getAttribute('index'));
+  const handleCompletedClick = async (e) => {
+    const clickIndex = e.target.getAttribute("index");
+    const id = serviceRequests[clickIndex]._id;
+    const data = await axios.put("http://localhost:3001/api/mark-complete", {
+      _id: id,
+    });
+    // console.log(data.data)
+    serviceRequests[clickIndex]=data.data
+    console.log(serviceRequests)
+    setserviceRequests(serviceRequests);
   };
 
   useEffect(() => {

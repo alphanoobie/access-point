@@ -46,14 +46,19 @@ const allServiceRequests = async (req, res) => {
 
 const markComplete = async (req, res) => {
   try {
-    const existingData = await serviceRequestModel.findOne(req.body).exec()
+    const existingData = await serviceRequestModel.findOne(req.body).exec();
     // console.log(existingData.completeStatus)
-    const changeStatus = !existingData.completeStatus
+    const changeStatus = !existingData.completeStatus;
     // console.log(changeStatus)
-    const data = await serviceRequestModel.findOneAndUpdate(req.body, {completeStatus:changeStatus}, {new:true}).exec()
-    console.log(data)
+    const data = await serviceRequestModel
+      .findOneAndUpdate(
+        req.body,
+        { completeStatus: changeStatus },
+        { new: true }
+      )
+      .exec();
 
-    return res.json({ ok: true });
+    return res.json(data);
   } catch (error) {
     console.log(error);
     return res.status(400).send("Edit Request Error");
