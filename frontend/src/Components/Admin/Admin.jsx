@@ -13,16 +13,13 @@ import styles from "./Admin.module.css";
 
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const getServiceRequestsData = async () => {
-    setLoading(true);
     const allServiceRequests = await axios.get(
       "http://localhost:3001/api/all-service-requests"
     );
     console.log(allServiceRequests.data);
     setserviceRequests(allServiceRequests.data);
-    setLoading(false);
   };
 
   const handleCompletedClick = async (e) => {
