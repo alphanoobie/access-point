@@ -66,9 +66,27 @@ const markComplete = async (req, res) => {
   }
 };
 
+const markPaid = async (req, res) => {
+  try {
+    const existingData = await serviceRequestModel.findOne(req.body).exec();
+    // console.log(existingData.completeStatus)
+    const changeStatus = !existingData.paymentStatus;
+    // console.log(changeStatus)
+    const data = await serviceRequestModel
+      .findOneAndUpdate(req.body, { paymentStatus: changeStatus }, { new: true })
+      .populate("user")
+      .exec();
+
+    return res.json(data);
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send("Edit Request Error");
+  }
+};
 module.exports = {
   serviceRequest,
   userServiceRequests,
   allServiceRequests,
   markComplete,
+  markPaid
 };

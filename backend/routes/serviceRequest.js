@@ -11,3 +11,4 @@ router.post("/service-request", controller.serviceRequest);
 router.post("/user-service-requests", controller.userServiceRequests);
 router.get("/all-service-requests", controller.allServiceRequests);
 router.put("/mark-complete", controller.markComplete)
+router.put("/mark-paid", controller.markPaid)

@@ -13,22 +13,32 @@ import styles from "./Admin.module.css";
 
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const getServiceRequestsData = async () => {
-    setLoading(true);
     const allServiceRequests = await axios.get(
       "http://localhost:3001/api/all-service-requests"
     );
     console.log(allServiceRequests.data);
     setserviceRequests(allServiceRequests.data);
-    setLoading(false);
   };
 
   const handleCompletedClick = async (e) => {
     const clickIndex = e.target.getAttribute("index");
     const id = serviceRequests[clickIndex]._id;
     const data = await axios.put("http://localhost:3001/api/mark-complete", {
+      _id: id,
+    });
+    // console.log(data.data)
+    const sr = serviceRequests.slice();
+    sr[clickIndex] = data.data;
+    // console.log(sr);
+    setserviceRequests(sr);
+  };
+
+  const handlePaidClick = async (e) => {
+    const clickIndex = e.target.getAttribute("index");
+    const id = serviceRequests[clickIndex]._id;
+    const data = await axios.put("http://localhost:3001/api/mark-paid", {
       _id: id,
     });
     // console.log(data.data)
@@ -80,7 +90,9 @@ export default function Admin() {
                       ? "Mark Pending"
                       : "Mark Complete"}
                   </TableCell>
-                  <TableCell>Mark Paid</TableCell>
+                  <TableCell index={index} onClick={handlePaidClick}>
+                  {serviceRequest.paymentStatus ? "Mark Not Paid" : "Mark Paid"}
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>
