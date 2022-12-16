@@ -32,9 +32,10 @@ export default function Admin() {
       _id: id,
     });
     // console.log(data.data)
-    serviceRequests[clickIndex]=data.data
-    console.log(serviceRequests)
-    setserviceRequests(serviceRequests);
+    const sr = serviceRequests.slice();
+    sr[clickIndex] = data.data;
+    // console.log(sr);
+    setserviceRequests(sr);
   };
 
   useEffect(() => {
@@ -75,7 +76,9 @@ export default function Admin() {
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
                   <TableCell index={index} onClick={handleCompletedClick}>
-                    Mark Completed
+                    {serviceRequest.completeStatus
+                      ? "Mark Pending"
+                      : "Mark Complete"}
                   </TableCell>
                   <TableCell>Mark Paid</TableCell>
                 </TableRow>

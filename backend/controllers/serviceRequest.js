@@ -56,6 +56,7 @@ const markComplete = async (req, res) => {
         { completeStatus: changeStatus },
         { new: true }
       )
+      .populate("user")
       .exec();
 
     return res.json(data);
