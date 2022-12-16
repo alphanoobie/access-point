@@ -60,7 +60,7 @@ const Service = (props) => {
               high on top of the list, our trained experts have the Experience
               and Expertise, to present to you the outcomes you require. The
               team’s professionalism and interactions will put you at ease that
-              the work will be done, quickly, efficiently and correctly
+              the work will be done, quickly, efficiently and correctly.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Service = (props) => {
           </div>
 
           <div className={styles.content}>
-            <p className={styles.contentpara}>
+            <p className={`${styles.contentpara} ${styles.electrical}`}>
               Power is vital. Indeed, in this age it's difficult to do quite a
               bit of anything around the office without power. You need to make
               sure your next electrical fitting or electrical repair is done

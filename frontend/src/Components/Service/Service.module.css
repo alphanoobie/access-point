@@ -1,8 +1,8 @@
-.selfcontainer{
-    display: flex;
-    flex-direction: row;
-    padding-top: 120px;
-    height: 50vh;
+.selfcontainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 120px;
+  height: 50vh;
 }
 
 .card {
@@ -12,15 +12,13 @@
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
-  padding: 30px 50px;
+  padding: 30px 40px;
   background: #fff;
   cursor: pointer;
   margin-right: 30px;
-  margin: auto;
 }
-.title{
-    text-align: center;
-  
+.title {
+  text-align: center;
 }
 .card:hover {
   height: 320px;
@@ -46,11 +44,8 @@ img {
   opacity: 0;
   transition: 0.3s;
   font-size: 12px;
-  text-align: left;
 }
-p{
-    margin: 0;
-}
+
 .card:hover > .content {
   opacity: 1;
   transform: translateY(-180px);
@@ -59,10 +54,16 @@ p{
 .content h2 {
   color: #7f9ead;
 }
-.contentpara{
-  padding-top: 7px;
+
+.contentpara {
+  margin: auto;
 }
-.requestBtn{
+
+.electrical {
+  padding: 7%;
+}
+
+.requestBtn {
   width: 180px;
   height: 50px;
   font-size: 16px;
@@ -75,7 +76,7 @@ p{
   margin-top: 99px;
   cursor: pointer;
 }
-.requestBtn:hover{
+.requestBtn:hover {
   width: 185px;
   height: 55px;
   transition: 0.2s;
