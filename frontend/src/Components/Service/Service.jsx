@@ -55,7 +55,7 @@ const Service = (props) => {
           </div>
 
           <div className={styles.content}>
-            <p className={styles.contentpara}>
+            <p className={`${styles.contentpara} ${styles.painting}`}>
               When your Painting, Coatings, Waterproofing or Repair Needs are
               high on top of the list, our trained experts have the Experience
               and Expertise, to present to you the outcomes you require. The
