@@ -18,36 +18,39 @@ const Testimonial = () => {
           <figcaption>
             <blockquote>
               <p className={styles.topcard_text}>
-                If you do the job badly enough, sometimes you don't get asked to
-                do it again.
+                A big thanks for the support provided by the company. Hope to
+                witness continued dedication in future!
               </p>
             </blockquote>
-            <h3>Wisteria Ravenclaw</h3>
-            <h4 className={styles.card_company}>Google Inc.</h4>
+            <h3>ICICI Prudentials</h3>
+            {/* <h4 className={styles.card_company}>Google Inc.</h4> */}
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
               <p className={styles.topcard_text}>
-                I'm killing time while I wait for life to shower me with meaning
-                and happiness.
+                This is to inform you that the work done at sanchar nagar branch
+                was great. It was completed on time and instantly with good
+                furnishing. Keep up the good work.
               </p>
             </blockquote>
-            <h3>Ursula Gurnmeister</h3>
-            <h4 className={styles.card_company}>Facebook</h4>
+            <h3> AXIS BANK</h3>
+            {/* <h4 className={styles.card_company}>AXIS BANK</h4> */}
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
             <blockquote>
               <p className={styles.topcard_text}>
-                The only skills I have the patience to learn are those that have
-                no real application in life.
+                This is to express sincere gratitude towards your efforts in
+                resolving our issues promptly. The company's approach towards
+                responding and following up until issue was resolved was
+                commendable. Keep up the good work and best wishes.
               </p>
             </blockquote>
-            <h3>Ingredia Nutrisha</h3>
-            <h4 className={styles.card_company}>Twitter</h4>
+            <h3>Yes Bank</h3>
+            {/* <h4 className={styles.card_company}>Twitter</h4> */}
           </figcaption>
         </figure>
       </div>
@@ -56,19 +59,17 @@ const Testimonial = () => {
         <div className={styles.left}>
           <h1 className={styles.text_main}>Why Us?</h1>
           <p className={styles.text_top}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-            consequatur repellendus ex perferendis! Quibusdam recusandae ea
-            nostrum modi cupiditate laboriosam dolorem ipsum delectus rem
-            voluptatum, commodi nisi est ad architecto.
+            We are India's most Customer Centric company in repair and
+            maintenance industry by exceeding the Customer's expectations and
+            implied needs and fly off their worries by rendering quality
+            services On time, All the time and Every time.
           </p>
           <p className={styles.text_down}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
-            quisquam ea, assumenda dolor qui cupiditate sint veritatis nostrum
-            necessitatibus facilis. Officiis a laborum repudiandae error facilis
-            odit cumque adipisci vero illum veniam, magnam atque velit possimus
-            ratione explicabo odio vel tenetur voluptatem saepe ea nulla ullam.
-            Beatae sed similique, quo ipsa nobis accusantium distinctio debitis
-            asperiores, corporis doloribus aperiam! Sit!
+            We take our responsibilities to you seriously, and it shows in all
+            our services that we offer. Rated five stars, we've been given a 97%
+            positive service rating by all our clients. Our professionals are
+            here to take care of you, and we work hard to find new ways of
+            making your experience with us nothing but exceptional.
           </p>
         </div>
         <div className={styles.right}>
@@ -76,31 +77,33 @@ const Testimonial = () => {
             <span className={styles.card_comma}>&ldquo;</span>
 
             <p className={styles.card_text}>
-              Proin sed libero enim sed faucibus turpis. At imperdiet dui
-              accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla
-              pharetra diam sit amet nisl. Enim nunc
+              Friendly and Professional Folks! Access Point Plumbing Service was
+              great. We had an emergency, and they got to us quickly and helped
+              us through it. We’ve used them in the past and will definitely use
+              them again in the future, and we recommend them to our friends.
             </p>
-            <h5 className={styles.card_name}>Celia Almeda</h5>
+            <h5 className={styles.card_name}>Mark</h5>
           </div>
           <div className={styles.card}>
             <span className={styles.card_comma}>&ldquo;</span>
 
             <p className={styles.card_text}>
-              Proin sed libero enim sed faucibus turpis. At imperdiet dui
-              accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla
-              pharetra diam sit amet nisl. Enim nunc
+              Access Point recently completed the interior and exterior of our
+              entire house. We’re very happy with the results, and the house
+              looks great. They were professional and friendly throughout. We
+              highly recommend them.
             </p>
-            <h5 className={styles.card_name}>Celia Almeda</h5>
+            <h5 className={styles.card_name}>Ana</h5>
           </div>
           <div className={styles.card}>
             <span className={styles.card_comma}>&ldquo;</span>
 
             <p className={styles.card_text}>
-              Proin sed libero enim sed faucibus turpis. At imperdiet dui
-              accumsan sit amet nulla facilisi morbi tempus. Ut sem nulla
-              pharetra diam sit amet nisl. Enim nunc
+              What a great team! They were able to fix what we needed fast!
+              Amazing electrician with a job well done! I would highly recommend
+              them!
             </p>
-            <h5 className={styles.card_name}>Celia Almeda</h5>
+            <h5 className={styles.card_name}>Atharva Singh</h5>
           </div>
         </div>
       </div>
