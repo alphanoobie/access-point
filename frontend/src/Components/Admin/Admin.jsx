@@ -91,7 +91,7 @@ export default function Admin() {
                       : "Mark Complete"}
                   </TableCell>
                   <TableCell index={index} onClick={handlePaidClick}>
-                    Mark Paid
+                  {serviceRequest.paymentStatus ? "Mark Not Paid" : "Mark Paid"}
                   </TableCell>
                 </TableRow>
               ))}
