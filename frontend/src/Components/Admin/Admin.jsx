@@ -35,6 +35,19 @@ export default function Admin() {
     setserviceRequests(sr);
   };
 
+  const handlePaidClick = async (e) => {
+    const clickIndex = e.target.getAttribute("index");
+    const id = serviceRequests[clickIndex]._id;
+    const data = await axios.put("http://localhost:3001/api/mark-paid", {
+      _id: id,
+    });
+    // console.log(data.data)
+    const sr = serviceRequests.slice();
+    sr[clickIndex] = data.data;
+    // console.log(sr);
+    setserviceRequests(sr);
+  };
+
   useEffect(() => {
     try {
       getServiceRequestsData();
@@ -77,7 +90,9 @@ export default function Admin() {
                       ? "Mark Pending"
                       : "Mark Complete"}
                   </TableCell>
-                  <TableCell>Mark Paid</TableCell>
+                  <TableCell index={index} onClick={handlePaidClick}>
+                    Mark Paid
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>
