@@ -14,6 +14,7 @@ import styles from "./ServicePopForm.module.css";
 import Backdrop from "@mui/material/Backdrop";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const ServicePopForm = (props) => {
   const [service, setService] = useState("");
@@ -30,10 +31,14 @@ const ServicePopForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //   const { data } = await axios.post(`http://localhost:3001/api/login/`, {
-      //     service
-      //   });
-      //   console.log(data);
+      const user = window.localStorage.getItem("user");
+      const userObject = JSON.parse(user);
+      console.log(service)
+      const { data } = await axios.post(
+        `http://localhost:3001/api/service-request`,
+        { user: userObject._id, request:service }
+      );
+      console.log(data);
       toast("Service Requested Successfully");
       navigate("/service");
       window.location.reload(true);
@@ -95,15 +100,15 @@ const ServicePopForm = (props) => {
               <CardContent>
                 <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
                   <Card
-                    onClick={() => handleCardClick("maintenance")}
+                    onClick={() => handleCardClick("Maintenance")}
                     sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "maintenance"}
+                          checked={service === "Maintainance"}
                           onChange={handleChange}
-                          value="maintenance"
+                          value="Maintainance"
                           name="radio-buttons"
                           style={{ verticalAlign: "sub" }}
                         />
@@ -113,9 +118,7 @@ const ServicePopForm = (props) => {
                           variant="h5"
                           component="div"
                         >
-
                           Maintainance
-
                         </Typography>
                         <Typography
                           ml={5}
@@ -131,15 +134,15 @@ const ServicePopForm = (props) => {
                   </Card>
 
                   <Card
-                    onClick={() => handleCardClick("plumbing")}
+                    onClick={() => handleCardClick("Plumbing")}
                     sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "plumbing"}
+                          checked={service === "Plumbing"}
                           onChange={handleChange}
-                          value="plumbing"
+                          value="Plumbing"
                           name="radio-buttons"
                           size="small"
                           style={{ verticalAlign: "sub" }}
@@ -167,15 +170,15 @@ const ServicePopForm = (props) => {
                   </Card>
 
                   <Card
-                    onClick={() => handleCardClick("painting")}
+                    onClick={() => handleCardClick("Painting")}
                     sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "painting"}
+                          checked={service === "Painting"}
                           onChange={handleChange}
-                          value="painting"
+                          value="Painting"
                           name="radio-buttons"
                           style={{ verticalAlign: "sub" }}
                         />
@@ -201,15 +204,15 @@ const ServicePopForm = (props) => {
                   </Card>
 
                   <Card
-                    onClick={() => handleCardClick("electrical")}
+                    onClick={() => handleCardClick("Electrical")}
                     sx={{ maxWidth: 800, margin: "2%", padding: "0.5%" }}
                   >
                     <CardActionArea>
                       <CardContent>
                         <Radio
-                          checked={service === "electrical"}
+                          checked={service === "Electrical"}
                           onChange={handleChange}
-                          value="electrical"
+                          value="Electrical"
                           name="radio-buttons"
                           style={{ verticalAlign: "sub" }}
                         />
