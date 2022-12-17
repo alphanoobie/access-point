@@ -33,7 +33,6 @@ const ServicePopForm = (props) => {
     try {
       const user = window.localStorage.getItem("user");
       const userObject = JSON.parse(user);
-      console.log(service)
       const { data } = await axios.post(
         `http://localhost:3001/api/service-request`,
         { user: userObject._id, request:service }
@@ -42,6 +41,8 @@ const ServicePopForm = (props) => {
       toast("Service Requested Successfully");
       navigate("/service");
       window.location.reload(true);
+      console.log(service)
+
     } catch (err) {
       console.log(err);
       toast(err.response.data);

@@ -5,7 +5,9 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Button,
 } from "@mui/material";
+import { color } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -61,7 +63,7 @@ export default function Admin() {
         <h1>All Service Requests</h1>
 
         <Table className={styles.Table}>
-          <TableHead>
+          <TableHead style={{ backgroundColor: "#2193b0" }}>
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
@@ -77,21 +79,54 @@ export default function Admin() {
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
-                  <TableCell>
+                  <TableCell
+                    style={{
+                      color:
+                        serviceRequest.completeStatus === true ? "green" : "red",
+                    }}
+                  >
                     {serviceRequest.completeStatus
                       ? "Completed"
                       : "Service Pending"}
                   </TableCell>
-                  <TableCell>
+                  <TableCell
+                    style={{
+                      color:
+                        serviceRequest.paymentStatus === true ? "green" : "red",
+                    }}
+                  >
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
-                  <TableCell index={index} onClick={handleCompletedClick}>
-                    {serviceRequest.completeStatus
-                      ? "Mark Pending"
-                      : "Mark Complete"}
+                  <TableCell>
+                    <Button
+                      index={index}
+                      onClick={handleCompletedClick}
+                      style={{
+                        border: "1px solid black",
+                        backgroundColor: "#F5F5DC",
+                        color: "black",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {serviceRequest.completeStatus
+                        ? "Mark Pending"
+                        : "Mark Complete"}
+                    </Button>
                   </TableCell>
-                  <TableCell index={index} onClick={handlePaidClick}>
-                  {serviceRequest.paymentStatus ? "Mark Not Paid" : "Mark Paid"}
+                  <TableCell>
+                    <Button
+                      index={index}
+                      onClick={handlePaidClick}
+                      style={{
+                        border: "1px solid black",
+                        backgroundColor: "#F5F5DC",
+                        color: "black",
+                      }}
+                    >
+                      {serviceRequest.paymentStatus
+                        ? "Mark Not Paid"
+                        : "Mark Paid"}
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))}
