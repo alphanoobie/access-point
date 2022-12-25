@@ -32,8 +32,8 @@ const Payment = () => {
           variant="body2"
           color="text.secondary"
         >
-          Admin will confirm the payment and you will receive payment
-          confirmation mail within 24 hrs.
+          Admin will confirm the payment and payment status will be reflected in
+          your profile within 24 hrs.
         </Typography>
       </CardContent>
       <CardActions>
