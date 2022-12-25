@@ -1,40 +1,92 @@
 .profilecontainer {
-    width: 100vh;
-    height: 100vh;
+  height: 100vh;
 }
 
-.norequestdisplay{
-    text-align: center;
-    color: rgba(54, 52, 52, 0.543);
-    position: relative;
-    top: 25%;
-    margin-top: 100px;
+.norequestdisplay {
+  text-align: center;
+  color: rgba(54, 52, 52, 0.543);
+  position: relative;
+  top: 25%;
+  margin-top: 100px;
 }
 
 .servicerequest {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .servicerequest td,
 .servicerequest th {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 .servicerequest tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .servicerequest tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .servicerequest th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #2193b0;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2193b0;
+  color: white;
+}
+
+/* CSS */
+.pay_button {
+  align-items: center;
+  background-color: #2193b0;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 30px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  margin-left: 30%;
+}
+
+.pay_button:hover,
+.pay_button:focus {
+  background-color: #139ec1d8;
+  color: #ffffff;
+}
+
+.pay_button:active {
+  background: #2193b0;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.pay_button:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
 }
