@@ -6,6 +6,8 @@ import {
   TableHead,
   TableRow,
   Button,
+  MenuItem,
+  Select,
 } from "@mui/material";
 import { color } from "@mui/system";
 import axios from "axios";
@@ -15,6 +17,11 @@ import styles from "./Admin.module.css";
 
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
+  const [targetValue, setTargetValue] = useState("");
+
+  const handlevalue = (event) => {
+    setTargetValue(event.target.value);
+  };
 
   const getServiceRequestsData = async () => {
     const allServiceRequests = await axios.get(
@@ -63,7 +70,7 @@ export default function Admin() {
         <h1>All Service Requests</h1>
 
         <Table className={styles.Table}>
-          <TableHead style={{ backgroundColor: "#2193b0" }}>
+          <TableHead style={{ backgroundColor: "#2193b0" }} >
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
@@ -79,15 +86,11 @@ export default function Admin() {
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
-                  <TableCell
-                    style={{
-                      color:
-                        serviceRequest.completeStatus === true ? "green" : "red",
-                    }}
-                  >
-                    {serviceRequest.completeStatus
+                  <TableCell>
+                    {targetValue}
+                    {/* {serviceRequest.completeStatus
                       ? "Completed"
-                      : "Service Pending"}
+                      : "Service Pending"} */}
                   </TableCell>
                   <TableCell
                     style={{
@@ -98,7 +101,19 @@ export default function Admin() {
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
                   <TableCell>
-                    <Button
+                     <Select index={index}
+                      labelId="demo-simple-select-helper-label"
+                      id="demo-simple-select-helper"
+                      value={targetValue}
+                      label="Age"
+                      onChange={handlevalue}
+                    >
+                      <MenuItem value="None"> None </MenuItem>
+                      <MenuItem value={"started"}>Started</MenuItem>
+                      <MenuItem value={"ongoing"}>On Going</MenuItem>
+                      <MenuItem value={"finished"}>Finished</MenuItem>
+                    </Select> 
+                    {/* <Button
                       index={index}
                       onClick={handleCompletedClick}
                       style={{
@@ -111,7 +126,7 @@ export default function Admin() {
                       {serviceRequest.completeStatus
                         ? "Mark Pending"
                         : "Mark Complete"}
-                    </Button>
+                    </Button> */}
                   </TableCell>
                   <TableCell>
                     <Button
