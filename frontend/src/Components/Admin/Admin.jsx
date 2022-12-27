@@ -9,7 +9,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { color } from "@mui/system";
+// import { color } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -27,22 +27,21 @@ export default function Admin() {
     const allServiceRequests = await axios.get(
       "http://localhost:3001/api/all-service-requests"
     );
-    console.log(allServiceRequests.data);
     setserviceRequests(allServiceRequests.data);
   };
 
-  const handleCompletedClick = async (e) => {
-    const clickIndex = e.target.getAttribute("index");
-    const id = serviceRequests[clickIndex]._id;
-    const data = await axios.put("http://localhost:3001/api/mark-complete", {
-      _id: id,
-    });
-    // console.log(data.data)
-    const sr = serviceRequests.slice();
-    sr[clickIndex] = data.data;
-    // console.log(sr);
-    setserviceRequests(sr);
-  };
+  // const handleCompletedClick = async (e) => {
+  //   const clickIndex = e.target.getAttribute("index");
+  //   const id = serviceRequests[clickIndex]._id;
+  //   const data = await axios.put("http://localhost:3001/api/mark-complete", {
+  //     _id: id,
+  //   });
+  //   // console.log(data.data)
+  //   const sr = serviceRequests.slice();
+  //   sr[clickIndex] = data.data;
+  //   // console.log(sr);
+  //   setserviceRequests(sr);
+  // };
 
   const handlePaidClick = async (e) => {
     const clickIndex = e.target.getAttribute("index");
