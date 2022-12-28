@@ -13,14 +13,19 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import SelectOption from "../Blank Page/SelectOption";
+import SelectAnswer from "../Blank Page/SelectAnswer";
 import styles from "./Admin.module.css";
+import { SettingsPowerRounded } from "@mui/icons-material";
 
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
-  const [targetValue, setTargetValue] = useState("");
-
+  const [targetValue, setTargetValue] = useState();
+ 
+   
   const handlevalue = (event) => {
     setTargetValue(event.target.value);
+    console.log(targetValue)
   };
 
   const getServiceRequestsData = async () => {
@@ -86,7 +91,8 @@ export default function Admin() {
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
                   <TableCell>
-                    {targetValue}
+                    {/* <SelectAnswer data={answer}/> */}
+                    {/* {targetValue} */}
                     {/* {serviceRequest.completeStatus
                       ? "Completed"
                       : "Service Pending"} */}
@@ -100,7 +106,9 @@ export default function Admin() {
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
                   <TableCell>
-                     <Select index={index}
+                    <SelectOption />
+
+                     {/* <Select index={index}
                       labelId="demo-simple-select-helper-label"
                       id="demo-simple-select-helper"
                       value={targetValue}
@@ -111,7 +119,7 @@ export default function Admin() {
                       <MenuItem value={"started"}>Started</MenuItem>
                       <MenuItem value={"ongoing"}>On Going</MenuItem>
                       <MenuItem value={"finished"}>Finished</MenuItem>
-                    </Select> 
+                    </Select>  */}
                     {/* <Button
                       index={index}
                       onClick={handleCompletedClick}
