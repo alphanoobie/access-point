@@ -78,8 +78,8 @@ export default function Admin() {
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
-            <TableCell>Complete Status</TableCell>
             <TableCell>Payment Status</TableCell>
+            <TableCell>Complete Status</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableHead>
@@ -90,13 +90,13 @@ export default function Admin() {
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
-                  <TableCell>
-                    {/* <SelectAnswer data={answer}/> */}
-                    {/* {targetValue} */}
-                    {/* {serviceRequest.completeStatus
+                  {/* <TableCell>
+                    <SelectAnswer data={answer}/>
+                    {targetValue}
+                    {serviceRequest.completeStatus
                       ? "Completed"
-                      : "Service Pending"} */}
-                  </TableCell>
+                      : "Service Pending"}
+                  </TableCell> */}
                   <TableCell
                     style={{
                       color:
