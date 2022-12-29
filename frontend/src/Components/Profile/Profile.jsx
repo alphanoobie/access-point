@@ -44,11 +44,11 @@ const Profile = () => {
         <td index={index}>{data.request}</td>
         <td
           index={index}
-          style={{
-            color: data.completeStatus.toString() === "true" ? "green" : "red",
-          }}
+          // style={{
+          //   color: data.completeStatus.toString() === "true" ? "green" : "red",
+          // }}
         >
-          {data.completeStatus.toString()}
+          {data.Status}
         </td>
         <td
           index={index}
@@ -71,7 +71,7 @@ const Profile = () => {
             <tr>
               <th>ID</th>
               <th>Service</th>
-              <th>Completion</th>
+              <th>Status</th>
               <th>Payment</th>
               <th>Time</th>
             </tr>

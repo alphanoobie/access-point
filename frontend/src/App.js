@@ -10,16 +10,38 @@ import Testimonial from "./Components/Testimonials/Testimonial";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/Signup/Sign";
 import Profile from "./Components/Profile/Profile";
-import Blank from "./Components/Blank Page/blank404";
+// import Blank from './Components/Blank Page/blank404'
 import Admin from "./Components/Admin/Admin";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
 
 function App() {
-  const loggedIn = window.localStorage.getItem("isLoggedIn"); //sneha code to see if the user is logged in or no
-  const getAdmin = JSON.parse(window.localStorage.getItem("user"));
+  const loggedIn = window.localStorage.getItem("isLoggedIn");
   const navigate = useNavigate();
+
+  const [role, setRole] = useState();
+
+  useEffect(() => {
+    const getStatus = window.localStorage.getItem("user");
+    const checkStatus = JSON.parse(getStatus);
+
+    if (!checkStatus) {
+      setRole(null);
+      console.log(role + "ths is for null");
+      return;
+    }
+    if (checkStatus) {
+      setRole(checkStatus?.userRole);
+      console.log(role + "this is to check if user or admin");
+      if (role === "User") {
+        console.log("this is user");
+      } else {
+        console.log("this is not working");
+      }
+    }
+  }, [role]);
 
   return (
     <div>
@@ -34,11 +56,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
-        {getAdmin.userRole === "Admin" ? (
-          <Route path="/admin" element={<Admin />} />
-        ) : (
-          console.log("404 bad request")
-        )}
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </div>
   );

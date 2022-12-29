@@ -11,10 +11,12 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
+  
 
   const logout = () => {
     localStorage.clear();
     toast("Logged Out");
+    navigate('/')
     setTimeout(() => {
       window.location.reload(true);
     }, 3000);
@@ -39,7 +41,7 @@ const Navbar = (props) => {
             <div className={styles.logindiv}>
               <AccountCircleIcon className={styles.loginicon} />
               <Link className={styles.login} to="/login">
-                {props.logined ? "Profile" : "Login"}
+                Login
               </Link>
             </div>
           )}

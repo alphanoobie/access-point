@@ -9,40 +9,43 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { color } from "@mui/system";
+// import { color } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import SelectOption from "../Blank Page/SelectOption";
+import SelectAnswer from "../Blank Page/SelectAnswer";
 import styles from "./Admin.module.css";
+import { SettingsPowerRounded } from "@mui/icons-material";
 
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
-  const [targetValue, setTargetValue] = useState("");
+  const [targetValue, setTargetValue] = useState();
 
-  const handlevalue = (value) => {
-    setTargetValue(value);
+  const handlevalue = (event) => {
+    setTargetValue(event.target.value);
+    console.log(targetValue);
   };
 
   const getServiceRequestsData = async () => {
     const allServiceRequests = await axios.get(
       "http://localhost:3001/api/all-service-requests"
     );
-    console.log(allServiceRequests.data);
     setserviceRequests(allServiceRequests.data);
   };
 
-  const handleCompletedClick = async (e) => {
-    const clickIndex = e.target.getAttribute("index");
-    const id = serviceRequests[clickIndex]._id;
-    const data = await axios.put("http://localhost:3001/api/mark-complete", {
-      _id: id,
-    });
-    // console.log(data.data)
-    const sr = serviceRequests.slice();
-    sr[clickIndex] = data.data;
-    // console.log(sr);
-    setserviceRequests(sr);
-  };
+  // const handleCompletedClick = async (e) => {
+  //   const clickIndex = e.target.getAttribute("index");
+  //   const id = serviceRequests[clickIndex]._id;
+  //   const data = await axios.put("http://localhost:3001/api/mark-complete", {
+  //     _id: id,
+  //   });
+  //   // console.log(data.data)
+  //   const sr = serviceRequests.slice();
+  //   sr[clickIndex] = data.data;
+  //   // console.log(sr);
+  //   setserviceRequests(sr);
+  // };
 
   const handlePaidClick = async (e) => {
     const clickIndex = e.target.getAttribute("index");
@@ -74,8 +77,8 @@ export default function Admin() {
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
-            <TableCell>Complete Status</TableCell>
             <TableCell>Payment Status</TableCell>
+            <TableCell>Complete Status</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableHead>
@@ -86,12 +89,13 @@ export default function Admin() {
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
-                  <TableCell>
+                  {/* <TableCell>
+                    <SelectAnswer data={answer}/>
                     {targetValue}
-                    {/* {serviceRequest.completeStatus
+                    {serviceRequest.completeStatus
                       ? "Completed"
-                      : "Service Pending"} */}
-                  </TableCell>
+                      : "Service Pending"}
+                  </TableCell> */}
                   <TableCell
                     style={{
                       color:
@@ -102,8 +106,9 @@ export default function Admin() {
                   </TableCell>
 
                   <TableCell>
-                    <Select
-                      index={index}
+                    <SelectOption id={serviceRequest._id} />
+
+                    {/* <Select index={index}
                       labelId="demo-simple-select-helper-label"
                       id="demo-simple-select-helper"
                       value={targetValue}
@@ -114,7 +119,7 @@ export default function Admin() {
                       <MenuItem value={"started"}>Started</MenuItem>
                       <MenuItem value={"ongoing"}>On Going</MenuItem>
                       <MenuItem value={"finished"}>Finished</MenuItem>
-                    </Select>
+                    </Select>  */}
                     {/* <Button
                       index={index}
                       onClick={handleCompletedClick}
