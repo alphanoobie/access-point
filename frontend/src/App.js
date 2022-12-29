@@ -7,20 +7,19 @@ import About from "./Components/AboutUs/About";
 import Contact from "./Components/Contact/Contact";
 import Service from "./Components/Service/Service";
 import Testimonial from "./Components/Testimonials/Testimonial";
-import Login from './Components/Login/Login'
-import Signup from './Components/Signup/Sign'
-import Profile from './Components/Profile/Profile'
-import Blank from './Components/Blank Page/blank404'
+import Login from "./Components/Login/Login";
+import Signup from "./Components/Signup/Sign";
+import Profile from "./Components/Profile/Profile";
+import Blank from "./Components/Blank Page/blank404";
 import Admin from "./Components/Admin/Admin";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function App() {
   const loggedIn = window.localStorage.getItem("isLoggedIn"); //sneha code to see if the user is logged in or no
-  const getAdmin = JSON.parse(window.localStorage.getItem('user'))
-  const navigate = useNavigate()
+  const getAdmin = JSON.parse(window.localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -35,8 +34,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
-        {getAdmin.userRole === 'Admin' ? <Route  path="/admin" element={<Admin />} /> : console.log("404 bad request") }
-        
+        {getAdmin.userRole === "Admin" ? (
+          <Route path="/admin" element={<Admin />} />
+        ) : (
+          console.log("404 bad request")
+        )}
       </Routes>
     </div>
   );

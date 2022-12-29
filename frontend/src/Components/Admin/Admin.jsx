@@ -19,8 +19,8 @@ export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
   const [targetValue, setTargetValue] = useState("");
 
-  const handlevalue = (event) => {
-    setTargetValue(event.target.value);
+  const handlevalue = (value) => {
+    setTargetValue(value);
   };
 
   const getServiceRequestsData = async () => {
@@ -70,7 +70,7 @@ export default function Admin() {
         <h1>All Service Requests</h1>
 
         <Table className={styles.Table}>
-          <TableHead style={{ backgroundColor: "#2193b0" }} >
+          <TableHead style={{ backgroundColor: "#2193b0" }}>
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
@@ -100,19 +100,21 @@ export default function Admin() {
                   >
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
+
                   <TableCell>
-                     <Select index={index}
+                    <Select
+                      index={index}
                       labelId="demo-simple-select-helper-label"
                       id="demo-simple-select-helper"
                       value={targetValue}
                       label="Age"
-                      onChange={handlevalue}
+                      onChange={(e) => handlevalue(e.target.value)}
                     >
                       <MenuItem value="None"> None </MenuItem>
                       <MenuItem value={"started"}>Started</MenuItem>
                       <MenuItem value={"ongoing"}>On Going</MenuItem>
                       <MenuItem value={"finished"}>Finished</MenuItem>
-                    </Select> 
+                    </Select>
                     {/* <Button
                       index={index}
                       onClick={handleCompletedClick}

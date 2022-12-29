@@ -17,7 +17,13 @@ const Payment = () => {
         title="Rs 599"
         subheader="Payment QR Code"
       ></CardHeader>
-      <CardMedia component="img" alt="qr" height="337" image={qr} />
+      <CardMedia
+        style={{ "object-fit": "contain" }}
+        component="img"
+        alt="qr"
+        height="337"
+        image={qr}
+      />
       <CardContent>
         <Typography
           style={{ textAlign: "center" }}
