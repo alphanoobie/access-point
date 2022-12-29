@@ -21,11 +21,10 @@ import { SettingsPowerRounded } from "@mui/icons-material";
 export default function Admin() {
   const [serviceRequests, setserviceRequests] = useState("");
   const [targetValue, setTargetValue] = useState();
- 
-   
+
   const handlevalue = (event) => {
     setTargetValue(event.target.value);
-    console.log(targetValue)
+    console.log(targetValue);
   };
 
   const getServiceRequestsData = async () => {
@@ -74,12 +73,12 @@ export default function Admin() {
         <h1>All Service Requests</h1>
 
         <Table className={styles.Table}>
-          <TableHead style={{ backgroundColor: "#2193b0" }} >
+          <TableHead style={{ backgroundColor: "#2193b0" }}>
             <TableCell>ID</TableCell>
             <TableCell>User Email</TableCell>
             <TableCell>Request Type</TableCell>
-            <TableCell>Complete Status</TableCell>
             <TableCell>Payment Status</TableCell>
+            <TableCell>Complete Status</TableCell>
             <TableCell></TableCell>
             <TableCell></TableCell>
           </TableHead>
@@ -90,13 +89,13 @@ export default function Admin() {
                   <TableCell>{serviceRequest._id}</TableCell>
                   <TableCell>{serviceRequest.user.email}</TableCell>
                   <TableCell>{serviceRequest.request}</TableCell>
-                  <TableCell>
-                    {/* <SelectAnswer data={answer}/> */}
-                    {/* {targetValue} */}
-                    {/* {serviceRequest.completeStatus
+                  {/* <TableCell>
+                    <SelectAnswer data={answer}/>
+                    {targetValue}
+                    {serviceRequest.completeStatus
                       ? "Completed"
-                      : "Service Pending"} */}
-                  </TableCell>
+                      : "Service Pending"}
+                  </TableCell> */}
                   <TableCell
                     style={{
                       color:
@@ -105,15 +104,16 @@ export default function Admin() {
                   >
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
-                  <TableCell>
-                    <SelectOption />
 
-                     {/* <Select index={index}
+                  <TableCell>
+                    <SelectOption id={serviceRequest._id} />
+
+                    {/* <Select index={index}
                       labelId="demo-simple-select-helper-label"
                       id="demo-simple-select-helper"
                       value={targetValue}
                       label="Age"
-                      onChange={handlevalue}
+                      onChange={(e) => handlevalue(e.target.value)}
                     >
                       <MenuItem value="None"> None </MenuItem>
                       <MenuItem value={"started"}>Started</MenuItem>

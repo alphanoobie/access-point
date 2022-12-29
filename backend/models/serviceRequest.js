@@ -15,9 +15,10 @@ const ServiceRequestSchema = new mongoose.Schema(
       required: true,
     },
 
-    completeStatus: {
-      type: Boolean,
-      default: false,
+    Status: {
+      type: String,
+      enum: ["None", "Started", "Ongoing", "Finished"],
+      default: "None"
     },
 
     paymentStatus: {
