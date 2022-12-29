@@ -44,16 +44,17 @@ const allServiceRequests = async (req, res) => {
   }
 };
 
-const markComplete = async (req, res) => {
+const markStatus = async (req, res) => {
   try {
-    const existingData = await serviceRequestModel.findOne(req.body).exec();
+    // const existingData = await serviceRequestModel.findOne(req.body).exec();
     // console.log(existingData.completeStatus)
-    const changeStatus = !existingData.completeStatus;
+    const changeStatus = req.body.status;
+    console.log(req.body._id)
     // console.log(changeStatus)
     const data = await serviceRequestModel
       .findOneAndUpdate(
-        req.body,
-        { completeStatus: changeStatus },
+        {_id: req.body._id},
+        { Status: changeStatus },
         { new: true }
       )
       .populate("user")
@@ -87,6 +88,6 @@ module.exports = {
   serviceRequest,
   userServiceRequests,
   allServiceRequests,
-  markComplete,
+  markStatus,
   markPaid
 };

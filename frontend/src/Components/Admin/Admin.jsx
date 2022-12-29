@@ -106,7 +106,7 @@ export default function Admin() {
                     {serviceRequest.paymentStatus ? "Paid" : "Not Paid"}
                   </TableCell>
                   <TableCell>
-                    <SelectOption />
+                    <SelectOption id={serviceRequest._id} />
 
                      {/* <Select index={index}
                       labelId="demo-simple-select-helper-label"
