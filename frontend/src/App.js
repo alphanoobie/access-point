@@ -26,21 +26,22 @@ function App() {
   useEffect(() => {
     const getStatus = window.localStorage.getItem("user");
     const checkStatus = JSON.parse(getStatus);
-    
 
     if (!checkStatus) {
       setRole(null);
-      console.log(role + "ths is for null")
+      console.log(role + "ths is for null");
       return;
     }
     if (checkStatus) {
-      setRole( checkStatus?.userRole);
-      console.log(role + "this is to check if user or admin")
-      if(role === 'User'){
-        console.log("this is user")
-      }else{console.log("this is not working")}
+      setRole(checkStatus?.userRole);
+      console.log(role + "this is to check if user or admin");
+      if (role === "User") {
+        console.log("this is user");
+      } else {
+        console.log("this is not working");
+      }
     }
-  }, []);
+  }, [role]);
 
   return (
     <div>
