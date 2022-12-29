@@ -16,40 +16,49 @@ const Testimonial = () => {
       <div className={styles.middle}>
         <figure className={styles.snip1533}>
           <figcaption>
-            <blockquote>
-              <p className={styles.topcard_text}>
-                A big thanks for the support provided by the company. Hope to
-                witness continued dedication in future!
-              </p>
-            </blockquote>
-            <h3>ICICI Prudentials</h3>
+            <div className={styles.testimonial_text}>
+              <blockquote>
+                <p className={styles.topcard_para}>
+                  A big thanks for the support provided by the company. Hope to
+                  witness continued dedication in future!
+                </p>
+
+                <h3>ICICI Prudentials</h3>
+              </blockquote>
+            </div>
             {/* <h4 className={styles.card_company}>Google Inc.</h4> */}
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
-            <blockquote>
-              <p className={styles.topcard_text}>
-                This is to inform you that the work done at sanchar nagar branch
-                was great. It was completed on time and instantly with good
-                furnishing. Keep up the good work.
-              </p>
-            </blockquote>
-            <h3> AXIS BANK</h3>
+            <div className={styles.testimonial_text}>
+              <blockquote>
+                <p className={styles.topcard_para}>
+                  This is to inform you that the work done at sanchar nagar
+                  branch was great. It was completed on time and instantly with
+                  good furnishing. Keep up the good work.
+                </p>
+
+                <h3> AXIS BANK</h3>
+              </blockquote>
+            </div>
             {/* <h4 className={styles.card_company}>AXIS BANK</h4> */}
           </figcaption>
         </figure>
         <figure className={styles.snip1533}>
           <figcaption>
-            <blockquote>
-              <p className={styles.topcard_text}>
-                This is to express sincere gratitude towards your efforts in
-                resolving our issues promptly. The company's approach towards
-                responding and following up until issue was resolved was
-                commendable. Keep up the good work and best wishes.
-              </p>
-            </blockquote>
-            <h3>Yes Bank</h3>
+            <div className={styles.testimonial_text}>
+              <blockquote>
+                <p className={styles.topcard_para}>
+                  This is to express sincere gratitude towards your efforts in
+                  resolving our issues promptly. The company's approach towards
+                  responding and following up until issue was resolved was
+                  commendable. Keep up the good work and best wishes.
+                </p>
+
+                <h3>Yes Bank</h3>
+              </blockquote>
+            </div>
             {/* <h4 className={styles.card_company}>Twitter</h4> */}
           </figcaption>
         </figure>
